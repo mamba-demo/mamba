@@ -1,0 +1,42 @@
+exp: 'MIL'
+feats_path: '/3dp/data/OTLS_patches/patch_96_step_96_3D_all_global/SwinUNETR_h5_patch_features/swinvit_aug'
+result_path: '/3dp/results'
+clinical_path: '/3dp/ThreeDimPath/csv/OTLS/prostate_clinical_list.csv'
+
+task: 'clf'
+numOfclasses: 2
+mode: '3D'
+epochs: 200
+epochs_finetune: 0
+label: 'BCR'
+loss: 'cross'
+
+
+lr: 0.0001
+lr_finetune: 0.0001
+warm_start: False
+scheduler: None
+weight_decay: 0.00001
+grad_accum: 1
+opt: adam
+dropout: 0.25
+
+seed_data: 10
+seed_exp: 10
+
+# Data properties
+prop_train: 0.7
+sample_prop: 0.25
+sample_mode: 'volume'
+numOfaug: 9 # Number of augmentations performed for data
+split_mode: 'loo' # 'kf' or 'loo'
+split_fold: 10
+
+encoder: 'resnet50_2d' # Feature extractor encoder 'resnet34', 'resnet50', 'MAE', or 'SwinUNETR'
+
+decoder: 'attn' # 'attn', 'uniform'
+decoder_enc: True # Lightweight encoder within decoder
+decoder_enc_dim: 128  # Only valid if decoder_enc is True
+decoder_enc_num: 2
+attn_latent_dim: 16
+gated: True

@@ -1,0 +1,50 @@
+# number of classes
+n_classes: 2
+numOfiterations: 50
+seed_exp: 100
+numOfslices: 2
+loss: 'bce'
+
+
+# OTLS
+#exp_dir: /home/andrew/workspace/results/MIL_OTLS_final_test_dropout/clf__cls-2__split-kf-5
+#save_dir: /home/andrew/workspace/results/MIL_OTLS_final_variability/3D_cross
+#
+## Features from testing
+#feats_path: /home/andrew/data/OTLS_full/inv/patch_128-64_step_128-32_3D_all_global/2plus1d_h5_patch_features/2plus1d_mean_HE
+#clinical_path: /home/andrew/workspace/ThreeDimPlayground/csv/OTLS/prostate_clinical_list_original.csv
+#
+#mode: 'internal' # Internal or external
+#
+## Parameters from training
+#patch: patch_128-64_step_128-32_3D_all_global
+##patch: patch_128-64_step_128-32_3D_top1_global
+#pretrain: 2plus1d_mean_HE
+#encoder: '2plus1d'
+#decoder: 'attn'
+#dec_enc_dim: 256
+#attn_latent_dim: 64
+#numOffolds: 5
+#numOfaug: 0
+#clf_label: 'BCR'
+
+
+exp_dir: /home/andrew/workspace/results/MIL_CT_trimmed_final/clf__cls-2__split-kf-5
+save_dir: /home/andrew/workspace/results/MIL_CT_final_variability/3D_cross
+
+# Features from testing
+feats_path: /home/andrew/data/microCT_trimmed/patch_128-32_step_128-32_3D_top12_global/2plus1d_h5_patch_features/2plus1d_low_25k_top_1pct_mean_HE_aug
+clinical_path: /home/andrew/workspace/ThreeDimPlayground/csv/CT/prostate_clinical_list_train_surv.csv
+
+mode: 'internal' # Internal or external
+
+# Parameters from training
+patch: patch_128-32_step_128-32_3D_top12_global
+pretrain: 2plus1d_low_25k_top_1pct_mean_HE_aug
+encoder: '2plus1d'
+decoder: 'attn'
+dec_enc_dim: 256
+attn_latent_dim: 64
+numOffolds: 5
+numOfaug: 0
+clf_label: 'BCR'

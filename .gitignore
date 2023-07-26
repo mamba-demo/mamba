@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+old/
+notebooks/
+temp/
+heatmaps/
+notebooks/plots/
+notesbooks/*.png
+command.sh
+command_surv.sh
+notebooks/CT_annotation.ipynb
